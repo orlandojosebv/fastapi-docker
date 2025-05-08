@@ -1,1 +1,4 @@
 docker compose exec db psql -U usuario -d notasdb -c "CREATE TABLE IF NOT EXISTS notas (id SERIAL PRIMARY KEY, title TEXT, contenido TEXT);"
+
+Ejemplo de peticion curl en windows
+curl -X POST "http://localhost:8000/notes" -H "Content-Type: application/json" -d "{\"title\": \"tercer Previo\", \"contenido\": \"cloud\"}"
