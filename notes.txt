@@ -1,0 +1,3 @@
+3 | nota2 | cloud
+id=4 | titulo=nota10 | contenido= prueba
+id = 5 | titulo = tercer Previo | contenido = cloud

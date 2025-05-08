@@ -1,0 +1,1 @@
+docker compose exec db psql -U usuario -d notasdb -c "CREATE TABLE IF NOT EXISTS notas (id SERIAL PRIMARY KEY, title TEXT, contenido TEXT);"

@@ -1,10 +1,11 @@
+
 services:
   web:
     build: .
     ports:
-      "8000:8000"
+      - "8000:8000"
     volumes:
-      ./:/app/data  
+      - ./:/app 
     environment:
       AUTOR: Orlando
       DB_HOST: db
@@ -13,7 +14,7 @@ services:
       DB_NAME: notasdb
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     networks:
-      redlocal
+      - redlocal
 
   db:
     image: postgres:14
@@ -22,9 +23,9 @@ services:
       POSTGRES_PASSWORD: password123
       POSTGRES_DB: notasdb
     volumes:
-      pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     networks:
-      redlocal
+      - redlocal
 
 volumes:
   pgdata:
